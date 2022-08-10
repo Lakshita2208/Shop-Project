@@ -1,0 +1,11 @@
+.pagination li a {
+    border-radius: 4px;
+    margin: 5px;
+}
+
+button {
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 8px;
+}
