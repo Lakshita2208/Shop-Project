@@ -1,0 +1,56 @@
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/ecommerce
+    initialization-mode: always
+    continue-on-error: true
+  application:
+    name: eshop-service    
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: testemail@gmail.com
+    password: testemail
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+
+  jpa:
+    show-sql: false
+#    generate-ddl: false
+    hibernate:
+      id:
+        new_generator_mappings: false;
+      ddl-auto: none
+    database: MySQL
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false;
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+
+
+
+
+
+  queries:
+    users-query: select email, password, active from users where email=?
+    roles-query: select email, role from users where email=?
+server:
+  servlet:
+    contextPath: /api
+
+jwtSecret: me.test
+jwtExpiration: 86400
+
+
+  
